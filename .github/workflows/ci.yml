@@ -14,7 +14,9 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests and collect coverage
         run: |
-          coverage run test_mymath.py
+          coverage run tests.py
           coverage xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
+        with:
+            fail_ci_if_error: true
