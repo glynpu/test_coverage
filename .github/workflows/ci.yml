@@ -10,6 +10,8 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      - name: create coveragefile
+        run: touch .coverage
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests and collect coverage
